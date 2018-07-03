@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android_arna_tilt_control.MainActivity"
+    tools:layout_editor_absoluteY="89dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/android_sensor_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tablert sensor data"
+        android:layout_alignTop="@+id/img_view_box"
+        android:layout_toRightOf="@+id/img_view_box"
+        android:layout_toEndOf="@+id/img_view_box"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.268"
+        app:layout_constraintVertical_bias="0.256" />
+
+    <ImageView
+        android:id="@+id/img_view_box"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="Image Display"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintVertical_bias="0.114" />
+
+
+    <org.ros.android.view.RosTextView
+        android:id="@+id/arna_joint_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arna Joint States"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintVertical_bias="0.681" />
+
+
+    <TextView
+        android:id="@+id/joy_data_box"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Joysick data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintVertical_bias="0.352" />
+
+    <!--
+    <TextView
+        android:id="@+id/disp_arm_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/arna_joint_info"
+        android:layout_alignStart="@+id/arna_joint_info"
+        android:layout_below="@+id/android_sensor_txt"
+        android:layout_marginTop="59dp"
+        android:text="Arm Data" />
+    -->
+
+
+    <Button
+        android:id="@+id/btn_arm_stand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onStandBtnClick"
+        android:text="arm Stand pos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintVertical_bias="0.351" />
+
+    <Button
+        android:id="@+id/arm_joint_sel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:onClick="onArmJointSelectBtnClick"
+        android:text=" Select_arm_joint "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149" />
+<!--
+    <FrameLayout
+        android:id="@+id/joy_layout"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@drawable/joy_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.927"
+        tools:context="com.android_arna_tilt_control.MainActivity">
+
+        <Button
+            android:id="@+id/joy_btn"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:background="@drawable/circle_btn"
+            android:onClick="onJoy_Btn_Click"
+            android:text=" " />
+
+    </FrameLayout>
+    -->
+
+    <FrameLayout
+        android:id="@+id/circle"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="clip_vertical|clip_horizontal"
+        android:background="@drawable/joy_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.861"
+        tools:context="com.android_arna_tilt_control.MainActivity">
+
+        <ImageView
+            android:id="@+id/tracker"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:background="@drawable/previous_velocity" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/joint_selection_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246" />
+
+</android.support.constraint.ConstraintLayout>
+

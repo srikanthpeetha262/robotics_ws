@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android_arna.MainActivity"
+    tools:layout_editor_absoluteY="89dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <!-- android:contextClickable="true" -->
+    <!--android:onClick="onSubscribeButtonClick" -->
+
+    <org.ros.android.view.RosTextView
+        android:id="@+id/sensor_txt_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Sensor Messages"
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_sensor"
+        tools:layout_constraintLeft_creator="1" />
+
+
+    <TextView
+        android:id="@+id/sensor_name_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Sensor"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/sensor_txt_box"
+        android:layout_marginEnd="62dp"
+        app:layout_constraintRight_toRightOf="@+id/sensor_txt_box"
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="62dp" />
+
+    <Button
+        android:id="@+id/button_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:onClick="onRefreshButtonClick"
+        android:text=" Refresh "
+        android:textColor="@android:color/black"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="41dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_stop"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_stop" />
+
+
+    <org.ros.android.view.RosImageView
+        android:id="@+id/camera_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="34dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="41dp"
+        android:layout_marginStart="34dp"
+        android:src="@mipmap/icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btn_sensor"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"></org.ros.android.view.RosImageView>
+
+
+
+
+    <Button
+        android:id="@+id/btn_sensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSensorBtnClick"
+        android:text="Sensor data"
+        android:layout_marginEnd="73dp"
+        app:layout_constraintRight_toLeftOf="@+id/sensor_name_box"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginTop="121dp"
+        app:layout_constraintTop_toTopOf="@+id/camera_image"
+        android:layout_marginRight="73dp" />
+
+    <Button
+        android:id="@+id/btn_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onUpButtonClick"
+        android:text="Up"
+        android:layout_marginEnd="7dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/btn_arm_rest"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="7dp" />
+
+    <Button
+        android:id="@+id/btn_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onDownButtonClick"
+        android:text="Down"
+        android:layout_marginEnd="7dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/btn_arm_rest"
+        android:layout_marginTop="51dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_arm_rest"
+        android:layout_marginRight="7dp" />
+
+    <Button
+        android:id="@+id/btn_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onLeftButtonClick"
+        android:text="Left"
+        android:layout_marginStart="34dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_arm_rest"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="34dp" />
+
+    <Button
+        android:id="@+id/btn_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onRightButtonClick"
+        android:text="Right"
+        android:layout_marginStart="56dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_arm_rest"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_arm_rest"
+        android:layout_marginLeft="56dp" />
+
+
+    <Button
+        android:id="@+id/btn_arm_rest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_dark"
+        android:onClick="onArmRestBtnClick"
+        android:text=" rest position "
+        android:layout_marginStart="46dp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_up"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_left"
+        android:layout_marginLeft="46dp" />
+
+
+
+    <Button
+        android:id="@+id/left_arm_select_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:onClick="onLeftArmBtnClick"
+        android:text=" Left Arm "
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/right_arm_select_btn"
+        android:layout_marginTop="44dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/right_arm_select_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/right_arm_select_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:onClick="onRightArmBtnClick"
+        android:text=" Right arm "
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_marginStart="72dp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="54dp"
+        app:layout_constraintTop_toBottomOf="@+id/left_arm_select_btn"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_right"
+        android:layout_marginLeft="72dp" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="76dp"
+        android:background="@android:drawable/ic_lock_power_off"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:onClick="onStopBtnClick"
+        android:text="Stop"
+        android:layout_marginEnd="76dp"
+        app:layout_constraintRight_toLeftOf="@+id/graph_disp_1"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginTop="25dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/left_arm_select_btn"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="76dp" />
+
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph_disp_1"
+        android:layout_width="430dp"
+        android:layout_height="112dp"
+        android:layout_marginEnd="29dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="34dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="29dp" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph_disp_2"
+        android:layout_width="430dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="49dp"
+        app:layout_constraintLeft_toLeftOf="@+id/graph_disp_1"
+        app:layout_constraintRight_toRightOf="@+id/graph_disp_1"
+        app:layout_constraintTop_toBottomOf="@+id/graph_disp_1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph_disp_3"
+        android:layout_width="430dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="@+id/graph_disp_2"
+        app:layout_constraintRight_toRightOf="@+id/graph_disp_2"
+        app:layout_constraintTop_toBottomOf="@+id/graph_disp_2"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/RT_graph"
+        android:layout_width="430dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintLeft_toLeftOf="@+id/graph_disp_3"
+        app:layout_constraintRight_toRightOf="@+id/graph_disp_3"
+        app:layout_constraintTop_toBottomOf="@+id/graph_disp_3"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/graph_data_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="graphDataCheck"
+        android:textSize="18sp"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/sensor_name_box"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="51dp"
+        app:layout_constraintLeft_toLeftOf="@+id/sensor_name_box" />
+
+    <TextView
+        android:id="@+id/android_sensor_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android  Sensor  Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449" />
+
+
+    <!--
+
+    <TextView
+        android:id="@+id/disp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginEnd="10dp"
+        tools:layout_editor_absoluteY="459dp"
+        tools:layout_editor_absoluteX="768dp" />
+
+        <Button
+        android:id="@+id/btn_graph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Graph"
+        android:layout_marginStart="31dp"
+        tools:layout_editor_absoluteY="357dp"
+        tools:layout_editor_absoluteX="748dp" />
+
+    <Button
+        android:id="@+id/btn_popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Popup"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/btn_down"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="90dp"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_down" />
+
+
+            <org.ros.android.view.RosTextView
+        android:id="@+id/txt_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Txt box..........."
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="254dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="47dp"
+        android:layout_marginRight="191dp" />
+    -->
+
+</android.support.constraint.ConstraintLayout>
