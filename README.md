@@ -15,3 +15,4 @@ This is demo repository. There are some files thate excluded on purpose. Refrer 
 # joy_cotrol
 * script files to read data from the ros joy_node and publish them on a given topic continously even when there is no change in th position of joystick.
 * Another script that reads data from ps4 controller and publishes on a given topic
+* Tools: ros, python
