@@ -1,4 +1,4 @@
-# This is demo repository. There are some files thate excluded on purpose. Refrer to the respective directories and scripts to use them.
+This is demo repository. There are some files thate excluded on purpose. Refrer to the respective directories and scripts to use them.
 
 # android_ws
 * Android Studio code to (1) control Baxter arm (2) control a custom robot arm with tilt motion from an app.
