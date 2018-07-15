@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(face_expressions)
+project(arduino_wid_ros)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -8,16 +8,13 @@ project(face_expressions)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  cv_bridge
   roscpp
   rospy
-  sensor_msgs
   std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-#find_package(OpenCV REQUIRED core highgui videoio)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -105,19 +102,11 @@ find_package(catkin REQUIRED COMPONENTS
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-#catkin_package(
+catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES face_expressions
+#  LIBRARIES arduino_wid_ros
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
-#)
-
-catkin_package(
-  CATKIN_DEPENDS
-    cv_bridge
-    roscpp
-    rospy
-    sensor_msgs
 )
 
 ###########
@@ -126,16 +115,14 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-#include_directories(
+include_directories(
 # include
-#  ${catkin_INCLUDE_DIRS}
-#)
-
-include_directories(include ${OpenCV_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
+  ${catkin_INCLUDE_DIRS}
+)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/face_expressions.cpp
+#   src/${PROJECT_NAME}/arduino_wid_ros.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -146,7 +133,7 @@ include_directories(include ${OpenCV_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/face_expressions_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/arduino_wid_ros_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -203,7 +190,7 @@ include_directories(include ${OpenCV_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_face_expressions.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_arduino_wid_ros.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
